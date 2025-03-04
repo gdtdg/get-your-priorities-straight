@@ -1,11 +1,11 @@
 <script>
-  import { writable } from 'svelte/store';
+  import { writable } from "svelte/store";
 
   // Creating a writable store
   export const counter = writable(0);
 
   function increment() {
-    counter.update(n => n + 1);
+    counter.update((n) => n + 1);
   }
 </script>
 
