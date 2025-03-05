@@ -1,38 +1,46 @@
-# sv
+# Get Your Priorities Straight
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**Indecisions can be challenging**, as figuring out the priorities of a project or task often feels overwhelming. By
+using pair comparisons, this tool simplifies the process, clearing the foggy view and providing clarity in
+decision-making.
 
-## Creating a project
+**Get Your Priorities Straight** is a powerful yet simple tool designed to help you rank your priorities effectively.
+Whether it's personal priorities like books to read, movies to watch, or professional tasks such as deciding on projects
+or features to prioritize, this app guides you through the process of ranking them in a clear and systematic manner.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## How It Works
 
-```bash
-# create a new project in the current directory
-npx sv create
+1. **Input Priorities**
+    - List your priorities directly in the app.
+    - Ensure a minimum of three items to begin ranking. Else, what's the point of ranking?
 
-# create a new project in my-app
-npx sv create my-app
-```
+2. **Select a Ranking Method**
+    - Choose one of the three comparison-based algorithms:
+        - **Tournament**
+        - **Merge Sort**
+        - **Round-Robin**
 
-## Developing
+3. **Ranking Process**
+    - Compare items visually in pairs according to the selected method.
+    - Keep choosing between options until the ranking is complete.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+4. **View Results**
+    - Get a neatly organized ranking of all your priorities.
+    - Restart to re-prioritize with updated priorities or preferences.
 
-```bash
-npm run dev
+## How to Start
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Go on [dtdg.fr/get-your-priorities-straight](https://dtdg.fr/get-your-priorities-straight) and use it, it's free.
 
-## Building
+## What's Next?
 
-To create a production version of your app:
+Enhancements for future releases:
 
-```bash
-npm run build
-```
+- Reranking priorities in the results view because sometimes, seeing the end results of a process brings new clarity, helping you realize exactly what you wanted all along.
+- Export priority lists for easy sharing.
 
-You can preview the production build with `npm run preview`.
+## Technologies
+We use Svelte, and build as a static site.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Contribution
+Contributions are welcome.
