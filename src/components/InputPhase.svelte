@@ -65,9 +65,9 @@
 </script>
 
 <section>
-  <h4>Enter your choices or paste a CSV then press Enter.</h4>
-  <p class="pb-0">(You need at least 3 choices to begin a ranking)</p>
-  <p class="pt-0">(CSV delimiters are "," or ";")</p>
+  <h2 class="mt-6">Enter your choices or paste a list of items, then press Enter.</h2>
+  <p class="pb-0">(You need at least 3 choices to begin ranking)</p>
+  <p class="pt-0">(For item list use delimiters <code>,</code> or <code>;</code>)</p>
   <form on:submit={addPriority} class="input-form">
     <input
       type="text"
@@ -104,7 +104,7 @@
     </div>
   {/if}
 
-  <h5 class="ranking-method-title">Select Ranking Method:</h5>
+  <h2 class="ranking-method-title">Select Ranking Method:</h2>
   <div class="options">
     <Root class="radio-group" bind:value={$chosenMethod}>
       <div class="radio-item">
@@ -146,18 +146,13 @@
 </section>
 
 <style>
-  h4,
-  h5 {
+  h2 {
     margin-bottom: 0.5em;
     line-height: 1.2em;
     font-weight: bold;
   }
 
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
+  h2 {
     font-size: 1.25rem;
   }
 
