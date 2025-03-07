@@ -1,7 +1,6 @@
 <script>
   import { tick } from "svelte";
   import { Button } from "$lib/components/ui/button";
-  import * as RadioGroup from "$lib/components/ui/radio-group";
 
   import {
     priorities,
@@ -65,9 +64,9 @@
 </script>
 
 <section>
-  <h4>Enter Your Choices or paste a CSV then press Enter.</h4>
-  <p>(You need atleast 3 choices to begin a ranking)</p>
-  <p>(CSV delimiters are "," or ";")</p>
+  <h4>Enter your choices or paste a CSV then press Enter.</h4>
+  <p class="pb-0">(You need at least 3 choices to begin a ranking)</p>
+  <p class="pt-0">(CSV delimiters are "," or ";")</p>
   <form on:submit={addPriority} class="input-form">
     <input
       type="text"

@@ -11,22 +11,25 @@ or features to prioritize, this app guides you through the process of ranking th
 ## How It Works
 
 1. **Input Priorities**
-    - List your priorities directly in the app.
-    - Ensure a minimum of three items to begin ranking. Else, what's the point of ranking?
+
+   - List your priorities directly in the app.
+   - Ensure a minimum of three items to begin ranking. Else, what's the point of ranking?
 
 2. **Select a Ranking Method**
-    - Choose one of the three comparison-based algorithms:
-        - **Tournament**
-        - **Merge Sort**
-        - **Round-Robin**
+
+   - Choose one of the three comparison-based algorithms:
+     - **Tournament**
+     - **Merge Sort**
+     - **Round-Robin**
 
 3. **Ranking Process**
-    - Compare items visually in pairs according to the selected method.
-    - Keep choosing between options until the ranking is complete.
+
+   - Compare items visually in pairs according to the selected method.
+   - Keep choosing between options until the ranking is complete.
 
 4. **View Results**
-    - Get a neatly organized ranking of all your priorities.
-    - Restart to re-prioritize with updated priorities or preferences.
+   - Get a neatly organized ranking of all your priorities.
+   - Restart to re-prioritize with updated priorities or preferences.
 
 ## How to Start
 
@@ -40,7 +43,9 @@ Enhancements for future releases:
 - Export priority lists for easy sharing.
 
 ## Technologies
+
 We use Svelte, and build as a static site.
 
 ## Contribution
+
 Contributions are welcome.

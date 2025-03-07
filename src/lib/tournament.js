@@ -28,9 +28,11 @@ export function selectTournamentWinner(data, winner, priorities) {
   while (
     data.tournamentIndex < data.tournamentPairs.length &&
     data.tournamentPairs[data.tournamentIndex].length === 1
-    ) {
+  ) {
     // Directly push the sole value to the next round
-    data.tournamentNextRound.push(data.tournamentPairs[data.tournamentIndex][0]);
+    data.tournamentNextRound.push(
+      data.tournamentPairs[data.tournamentIndex][0],
+    );
     data.tournamentIndex++; // Skip to the next pair
   }
 
@@ -48,4 +50,3 @@ export function selectTournamentWinner(data, winner, priorities) {
   }
   return data;
 }
-
