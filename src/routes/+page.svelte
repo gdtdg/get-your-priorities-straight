@@ -25,28 +25,58 @@
           : "input";
 </script>
 
-<Header />
-<main>
-  <div class="main-container">
-    {#if phase === "input"}
-      <InputPhase />
-    {:else if phase === "merge"}
-      <MergeSortPhase />
-    {:else if phase === "roundrobin"}
-      <RoundRobinPhase />
-    {:else if phase === "tournament"}
-      <TournamentPhase />
-    {:else}
-      <ResultsPhase />
-    {/if}
-  </div>
-</main>
-<Footer />
+<div class="page-wrapper">
+  <main>
+    <div class="main-container">
+      {#if phase === "input"}
+        <Header />
+        <InputPhase />
+      {:else if phase === "merge"}
+        <MergeSortPhase />
+      {:else if phase === "roundrobin"}
+        <RoundRobinPhase />
+      {:else if phase === "tournament"}
+        <TournamentPhase />
+      {:else}
+        <ResultsPhase />
+      {/if}
+    </div>
+  </main>
+  <Footer />
+</div>
 
 <style>
-  main {
-    padding-top: 130px;
+  :global(body) {
+    background: linear-gradient(
+      135deg,
+      rgba(79, 129, 237, 0.25) 0%,
+      rgba(121, 161, 240, 0.15) 40%,
+      rgba(181, 204, 246, 0.08) 75%
+    );
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
   }
+
+  :global(#app) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .main-container {
     min-width: 320px;
     max-width: 768px;
@@ -56,64 +86,11 @@
     padding-right: 1rem;
     text-align: center;
     width: 100%;
+    flex: 1;
     @media (min-width: 1280px) {
       max-width: 76rem;
       padding-left: 0;
       padding-right: 0;
     }
-  }
-  /* TODO: delete */
-  /* Typography */
-  p {
-    font-size: 1em;
-    line-height: 1.75em;
-    margin-bottom: 1em;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 0.5em;
-    line-height: 1.2em;
-    font-weight: bold;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1.25rem;
-  }
-
-  h6 {
-    font-size: 1rem;
-  }
-
-  ul,
-  ol {
-    margin-bottom: 1em;
-    padding-left: 1.5em;
-  }
-
-  li {
-    font-size: 1em;
-    line-height: 1.75em;
-    margin-bottom: 0.5em;
   }
 </style>

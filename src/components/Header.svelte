@@ -86,7 +86,7 @@
 
 <header>
   <h1>
-    <span class="static-text">What is your next </span>
+    <span class="static-text">What is your next&nbsp;</span>
     <span
       class="animated-text"
       class:visible
@@ -102,7 +102,7 @@
 
 <style>
   header {
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -119,13 +119,15 @@
     letter-spacing: 0.05em;
     text-align: center;
     flex-wrap: wrap; /* Allow wrapping on small screens */
+    width: 100%; /* Allow title to take full width */
+    margin-bottom: 20px;
   }
 
   .animated-text {
     transition: all 1s ease-in-out;
     display: inline-block;
     font-weight: 900;
-    min-width: 300px; /* Fixed width for animated text container */
+    min-width: 340px; /* Fixed width for animated text container */
     text-align: left; /* Align text to the left within the container */
   }
 
@@ -137,7 +139,7 @@
   /* Responsive adjustments for different screen sizes */
   @media (max-width: 768px) {
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       flex-direction: column;
       gap: 0.3rem;
     }
@@ -150,25 +152,34 @@
 
   @media (max-width: 480px) {
     header {
-      margin-top: 50px;
+      margin-top: 0;
+      padding: 0.5rem; /* Reduced padding */
     }
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
+      width: 100%;
+      padding: 0 5px; /* Minimal padding */
     }
 
     .animated-text {
-      min-width: 200px;
+      min-width: auto; /* Remove fixed width on mobile */
+      width: 100%; /* Use full width */
     }
   }
 
   @media (max-width: 320px) {
+    header {
+      padding: 0.25rem; /* Further reduced padding */
+    }
+
     h1 {
-      font-size: 1.2rem;
+      font-size: 2rem;
+      padding: 0; /* No padding */
     }
 
     .animated-text {
-      min-width: 150px;
+      min-width: auto; /* Remove fixed width */
     }
   }
 </style>
