@@ -1,6 +1,7 @@
 <script>
   import { tick } from "svelte";
   import { Button } from "$lib/components/ui/button";
+  import { Root, Item } from "$lib/components/ui/radio-group";
 
   import {
     priorities,
@@ -105,13 +106,9 @@
 
   <h5 class="ranking-method-title">Select Ranking Method:</h5>
   <div class="options">
-    <RadioGroup.Root class="radio-group" bind:value={$chosenMethod}>
+    <Root class="radio-group" bind:value={$chosenMethod}>
       <div class="radio-item">
-        <RadioGroup.Item
-          value="tournament"
-          id="tournament"
-          class="radio-button"
-        />
+        <Item value="tournament" id="tournament" class="radio-button" />
         <label for="tournament">
           <strong>Tournament Bracket (fastest)</strong>: use this when you want
           to determine your top priority only, but quickly.
@@ -119,7 +116,7 @@
       </div>
 
       <div class="radio-item">
-        <RadioGroup.Item value="merge" id="merge" class="radio-button" />
+        <Item value="merge" id="merge" class="radio-button" />
         <label for="merge">
           <strong>Merge Sort (medium speed)</strong>: use this when you want to
           determine the order of all your priorities.
@@ -127,17 +124,13 @@
       </div>
 
       <div class="radio-item">
-        <RadioGroup.Item
-          value="roundrobin"
-          id="roundrobin"
-          class="radio-button"
-        />
+        <Item value="roundrobin" id="roundrobin" class="radio-button" />
         <label for="roundrobin">
           <strong>Round-Robin (slow)</strong>: use this when you want to make a
           thorough examination of all your priorities.
         </label>
       </div>
-    </RadioGroup.Root>
+    </Root>
   </div>
 
   <div class="button-container">
