@@ -200,7 +200,6 @@
   .empty-state {
     color: #000000;
     font-weight: 600;
-    animation: pulse 2.5s infinite;
     padding: 1rem;
     border-radius: 8px;
     background-color: rgba(20, 171, 227, 0.05);
@@ -310,11 +309,11 @@
     }
   }
 
-  p {
-    font-size: 1em;
-    line-height: 1.75em;
-    margin-bottom: 1em;
-  }
+  /*p {*/
+  /*  font-size: 1em;*/
+  /*  line-height: 1.75em;*/
+  /*  margin-bottom: 1em;*/
+  /*}*/
 
   .radio-item {
     display: flex;
