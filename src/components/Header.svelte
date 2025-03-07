@@ -121,6 +121,7 @@
     flex-wrap: wrap; /* Allow wrapping on small screens */
     width: 100%; /* Allow title to take full width */
     margin-bottom: 20px;
+    line-height: 1em;
   }
 
   .animated-text {
