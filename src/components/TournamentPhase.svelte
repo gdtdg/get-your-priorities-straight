@@ -1,4 +1,6 @@
 <script>
+  import { Button } from "$lib/components/ui/button";
+
   import { tournamentData, priorities, resetState } from "$lib/state.js";
   import { selectTournamentWinner } from "$lib/tournament.js";
 
@@ -34,17 +36,17 @@
       {/if}
     </p>
     <div class="duel-buttons">
-      <button
+      <Button
         on:click={() =>
           handleSelect(
             $tournamentData.tournamentPairs[$tournamentData.tournamentIndex][0],
           )}
       >
         {$tournamentData.tournamentPairs[$tournamentData.tournamentIndex][0]}
-      </button>
+      </Button>
       {#if $tournamentData.tournamentPairs[$tournamentData.tournamentIndex].length > 1}
         <span>VS</span>
-        <button
+        <Button
           on:click={() =>
             handleSelect(
               $tournamentData.tournamentPairs[
@@ -53,11 +55,11 @@
             )}
         >
           {$tournamentData.tournamentPairs[$tournamentData.tournamentIndex][1]}
-        </button>
+        </Button>
       {/if}
     </div>
   {:else}
     <p>Preparing next round...</p>
   {/if}
-  <button on:click={resetState}>Start Over</button>
+  <Button on:click={resetState}>Start Over</Button>
 </section>

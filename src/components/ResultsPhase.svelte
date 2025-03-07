@@ -1,4 +1,6 @@
 <script>
+  import { Button } from "$lib/components/ui/button";
+
   import {
     chosenMethod,
     mergeSortData,
@@ -38,5 +40,5 @@
   {:else}
     <p>No final ranking available.</p>
   {/if}
-  <button on:click={resetState}>Start Over</button>
+  <Button on:click={resetState}>Start Over</Button>
 </section>

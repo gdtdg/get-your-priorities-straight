@@ -1,4 +1,6 @@
 <script>
+  import { Button } from "$lib/components/ui/button";
+
   import { mergeSortData, resetState } from "$lib/state.js";
   import { selectMerge } from "$lib/mergeSort.js";
 
@@ -22,13 +24,13 @@
       VS
       <strong>{currentMerge.right[currentMerge.rightIndex]}</strong>
     </p>
-    <button on:click={() => handleSelect("left")}>
+    <Button on:click={() => handleSelect("left")}>
       {currentMerge.left[currentMerge.leftIndex]}
-    </button>
+    </Button>
     <span> VS </span>
-    <button on:click={() => handleSelect("right")}>
+    <Button on:click={() => handleSelect("right")}>
       {currentMerge.right[currentMerge.rightIndex]}
-    </button>
+    </Button>
   {/if}
-  <button on:click={resetState}>Start Over</button>
+  <Button on:click={resetState}>Start Over</Button>
 </section>

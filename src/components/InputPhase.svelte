@@ -1,5 +1,8 @@
 <script>
   import { tick } from "svelte";
+  import { Button } from "$lib/components/ui/button";
+  import { Textarea } from "$lib/components/ui/textarea";
+
   import {
     priorities,
     duplicateMessage,
@@ -81,7 +84,7 @@
   {:else}
     <ul>
       {#each $priorities as item}
-        <li>{item} <button on:click={() => removePriority(item)}>×</button></li>
+        <li>{item} <Button on:click={() => removePriority(item)}>×</Button></li>
       {/each}
     </ul>
   {/if}
@@ -91,25 +94,27 @@
     <div>
       <label>
         <input type="radio" bind:group={$chosenMethod} value="tournament" />
-        <strong>Tournament Bracket (fastest)</strong>: use this when you want to determine your top priority only, but quickly.
+        <strong>Tournament Bracket (fastest)</strong>: use this when you want to
+        determine your top priority only, but quickly.
       </label>
     </div>
     <div>
       <label>
         <input type="radio" bind:group={$chosenMethod} value="merge" />
-        <strong>Merge Sort (medium speed)</strong>: use this when you want to determine the order of all your priorities.
+        <strong>Merge Sort (medium speed)</strong>: use this when you want to
+        determine the order of all your priorities.
       </label>
     </div>
     <div>
       <label>
         <input type="radio" bind:group={$chosenMethod} value="roundrobin" />
-        <strong>Round-Robin (slow)</strong>: use this when you want to make a thorough examination of all your priorities.
+        <strong>Round-Robin (slow)</strong>: use this when you want to make a
+        thorough examination of all your priorities.
       </label>
     </div>
   </div>
 
-
-  <button on:click={startRanking} disabled={$priorities.length < 3}>
+  <Button on:click={startRanking} disabled={$priorities.length < 3}>
     Start Ranking
-  </button>
+  </Button>
 </section>

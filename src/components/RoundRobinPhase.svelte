@@ -1,4 +1,6 @@
 <script>
+  import { Button } from "$lib/components/ui/button";
+
   import { priorities, roundRobinData, resetState } from "$lib/state.js";
   import { selectRoundRobin } from "$lib/roundRobin.js";
 
@@ -24,20 +26,20 @@
       <strong>{localPriorities[$roundRobinData.rr_j]}</strong>
     </p>
     <div class="duel-buttons">
-      <button
+      <Button
         on:click={() => handleSelect(localPriorities[$roundRobinData.rr_i])}
       >
         {localPriorities[$roundRobinData.rr_i]}
-      </button>
+      </Button>
       <span>VS</span>
-      <button
+      <Button
         on:click={() => handleSelect(localPriorities[$roundRobinData.rr_j])}
       >
         {localPriorities[$roundRobinData.rr_j]}
-      </button>
+      </Button>
     </div>
   {:else}
     <p>All comparisons completed.</p>
   {/if}
-  <button on:click={resetState}>Start Over</button>
+  <Button on:click={resetState}>Start Over</Button>
 </section>
