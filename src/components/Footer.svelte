@@ -3,6 +3,7 @@
     <a
       href="https://valerian.engineering"
       target="_blank"
+      rel="noreferrer"
       class="social-icon"
       aria-label="Valerian Engineering Website"
     >
@@ -21,6 +22,7 @@
     <a
       href="https://github.com/vdtdg"
       target="_blank"
+      rel="noreferrer"
       class="social-icon"
       aria-label="GitHub"
     >
@@ -38,6 +40,7 @@
     <a
       href="https://www.linkedin.com/in/valerian-de-thezan-de-gaussan"
       target="_blank"
+      rel="noreferrer"
       class="social-icon"
       aria-label="LinkedIn"
     >
@@ -55,6 +58,7 @@
     <a
       href="https://twitter.com/_vdtdg"
       target="_blank"
+      rel="noreferrer"
       class="social-icon"
       aria-label="Twitter"
     >
@@ -72,6 +76,7 @@
     <a
       href="mailto:valerian@dtdg.fr"
       target="_blank"
+      rel="noreferrer"
       class="social-icon"
       aria-label="Email"
     >
@@ -97,24 +102,25 @@
 
 <style>
   footer {
-    text-align: center !important;
-    margin-top: 2rem;
-    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 1.2rem;
+    padding: 1.2rem 0 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
   .company-link {
-    color: inherit;
+    color: #0f766e;
+    font-weight: 600;
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
   }
 
   .company-link:hover {
-    color: #14abe3;
+    color: #0d9488;
   }
 
   .company-link::after {
@@ -124,7 +130,7 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #14abe3;
+    background-color: #0d9488;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
@@ -137,23 +143,32 @@
 
   .social-icons {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.8rem;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .social-icon {
-    color: #666;
+    color: rgba(8, 51, 68, 0.75);
     transition:
       color 0.3s ease,
-      transform 0.3s ease;
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(8, 51, 68, 0.14);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 8px 15px rgba(8, 51, 68, 0.08);
   }
 
   .social-icon:hover {
-    color: #14abe3;
+    color: #0d9488;
     transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(13, 148, 136, 0.18);
   }
 
   .social-icon svg {
@@ -162,6 +177,7 @@
   }
 
   .copyright {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
+    color: rgba(8, 51, 68, 0.72);
   }
 </style>

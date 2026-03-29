@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
 
-  // List of phrases to animate through
   const phrases = [
     "goal?",
     "book to read?",
@@ -58,55 +57,60 @@
   let visible = true;
 
   function animateText() {
-    // Start hiding current phrase
     visible = false;
 
     setTimeout(() => {
-      // Update to next phrase
       phraseIndex = (phraseIndex + 1) % phrases.length;
       currentPhrase = phrases[phraseIndex];
-
-      // Show new phrase
       visible = true;
-
-      // Schedule next animation
-      setTimeout(animateText, 3000); // Keep phrase visible for 3 seconds
-    }, 1000); // Wait 1 second for exit animation
+      setTimeout(animateText, 3000);
+    }, 1000);
   }
 
   onMount(() => {
-    // Initialize with first phrase
     currentPhrase = phrases[0];
     visible = true;
-
-    // Start animation cycle after 3 seconds
     setTimeout(animateText, 3000);
   });
 </script>
 
-<header>
+<header class="hero">
+  <p class="hero-kicker">Priority Studio</p>
   <h1>
     <span class="static-text">What is your next&nbsp;</span>
-    <span
-      class="animated-text"
-      class:visible
-      class:hidden={!visible}
-      style="color: #14abe3; {visible
-        ? 'opacity: 1; transform: translateX(0)'
-        : 'opacity: 0; transform: translateX(20px)'}"
-    >
+    <span class="animated-text" class:visible>
       {currentPhrase}
     </span>
   </h1>
+  <p class="hero-subtitle">
+    Add your options, compare them head-to-head, and get a clear order in
+    minutes.
+  </p>
 </header>
 
 <style>
-  header {
-    margin-top: 50px;
+  .hero {
+    margin-top: 1.6rem;
     padding: 1rem;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hero-kicker {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: rgba(8, 51, 68, 0.7);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(8, 51, 68, 0.12);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
   }
 
   h1 {
@@ -114,73 +118,81 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 900;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     text-align: center;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    width: 100%; /* Allow title to take full width */
-    margin-bottom: 20px;
-    line-height: 1em;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    line-height: 1.05;
+    color: #083344;
   }
 
   .animated-text {
-    transition: all 1s ease-in-out;
+    transition: opacity 0.9s ease, transform 0.9s ease;
     display: inline-block;
     font-weight: 900;
-    min-width: 340px; /* Fixed width for animated text container */
-    text-align: left; /* Align text to the left within the container */
+    min-width: 300px;
+    text-align: left;
+    color: #0d9488;
+    opacity: 0;
+    transform: translateX(18px);
+    text-shadow: 0 8px 20px rgba(13, 148, 136, 0.22);
+  }
+
+  .animated-text.visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .static-text {
     display: inline-block;
     font-weight: 900;
+    color: #083344;
   }
 
-  /* Responsive adjustments for different screen sizes */
+  .hero-subtitle {
+    margin: 0;
+    max-width: 680px;
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    line-height: 1.55;
+    color: rgba(8, 51, 68, 0.78);
+  }
+
   @media (max-width: 768px) {
     h1 {
-      font-size: 3rem;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0.25rem;
     }
 
     .animated-text {
-      min-width: 240px;
+      min-width: 235px;
       text-align: center;
     }
   }
 
   @media (max-width: 480px) {
-    header {
-      margin-top: 0;
-      padding: 0.5rem; /* Reduced padding */
+    .hero {
+      margin-top: 0.4rem;
+      padding: 0.35rem;
+      gap: 0.4rem;
     }
 
     h1 {
-      font-size: 2.5rem;
       width: 100%;
-      padding: 0 5px; /* Minimal padding */
+      padding: 0 4px;
     }
 
     .animated-text {
-      min-width: auto; /* Remove fixed width on mobile */
-      width: 100%; /* Use full width */
+      min-width: auto;
+      width: 100%;
     }
   }
 
   @media (max-width: 320px) {
-    header {
-      padding: 0.25rem; /* Further reduced padding */
-    }
-
     h1 {
-      font-size: 2rem;
-      padding: 0; /* No padding */
-    }
-
-    .animated-text {
-      min-width: auto; /* Remove fixed width */
+      padding: 0;
     }
   }
 </style>

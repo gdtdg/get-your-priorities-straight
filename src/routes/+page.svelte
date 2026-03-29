@@ -26,7 +26,9 @@
 </script>
 
 <div class="page-wrapper">
-  <main>
+  <div class="aurora aurora-1" aria-hidden="true"></div>
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+  <main class="page-main">
     <div class="main-container">
       {#if phase === "input"}
         <Header />
@@ -46,32 +48,18 @@
 </div>
 
 <style>
-  :global(body) {
-    background: linear-gradient(
-      135deg,
-      rgba(79, 129, 237, 0.25) 0%,
-      rgba(121, 161, 240, 0.15) 40%,
-      rgba(181, 204, 246, 0.08) 75%
-    );
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  :global(#app) {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
   .page-wrapper {
+    position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
   }
 
-  main {
+  .page-main {
+    position: relative;
+    z-index: 2;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -79,18 +67,46 @@
 
   .main-container {
     min-width: 320px;
-    max-width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 1rem;
     text-align: center;
     width: 100%;
     flex: 1;
-    @media (min-width: 1280px) {
-      max-width: 76rem;
-      padding-left: 0;
-      padding-right: 0;
+  }
+
+  .aurora {
+    position: absolute;
+    z-index: 1;
+    border-radius: 999px;
+    filter: blur(60px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .aurora-1 {
+    width: 360px;
+    height: 360px;
+    top: -80px;
+    right: -90px;
+    background: rgba(13, 148, 136, 0.35);
+  }
+
+  .aurora-2 {
+    width: 320px;
+    height: 320px;
+    left: -120px;
+    bottom: 60px;
+    background: rgba(245, 158, 11, 0.22);
+  }
+
+  @media (max-width: 640px) {
+    .main-container {
+      padding: 0.75rem;
+    }
+
+    .aurora {
+      filter: blur(42px);
     }
   }
 </style>

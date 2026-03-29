@@ -18,7 +18,7 @@
 
 <section class="tournament-phase">
   <h2>Tournament Bracket</h2>
-  <p class="subtitle">Choose which option you prefer in each comparison</p>
+  <p class="subtitle">Pick winners quickly and surface your top priority first.</p>
 
   {#if $tournamentData.tournamentPairs[$tournamentData.tournamentIndex]}
     <div class="comparison-container">
@@ -38,7 +38,7 @@
         </Button>
 
         {#if $tournamentData.tournamentPairs[$tournamentData.tournamentIndex].length > 1}
-          <span class="vs-divider">VS</span>
+          <span class="vs-divider">vs</span>
           <Button
             variant="default"
             size="lg"
@@ -74,43 +74,37 @@
 </section>
 
 <style>
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5em;
-    line-height: 1.2em;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 1em;
-    line-height: 1.75em;
-    margin-bottom: 1em;
-  }
-
-  .subtitle {
-    color: #666;
-    margin-bottom: 1.5rem;
-  }
-
   .tournament-phase {
-    max-width: 800px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1.35rem 0.2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 70vh;
+    gap: 0.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    color: rgba(8, 51, 68, 0.75);
+    margin: 0;
   }
 
   .comparison-container {
-    background: rgba(20, 171, 227, 0.05);
-    border: 1px solid rgba(20, 171, 227, 0.2);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(8, 51, 68, 0.14);
+    border-radius: 18px;
     padding: 2rem;
     margin: 2rem auto;
-    box-shadow: 0 2px 8px rgba(20, 171, 227, 0.1);
-    max-width: 600px;
+    box-shadow: 0 14px 28px rgba(8, 51, 68, 0.08);
+    max-width: 700px;
+    backdrop-filter: blur(7px);
   }
 
   .duel-buttons {
@@ -123,12 +117,11 @@
 
   .duel-buttons :global(.choice-button) {
     min-width: 150px;
-    min-height: 80px;
-    height: 80px;
+    min-height: 90px;
     padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(20, 171, 227, 0.2);
+    font-size: 1.05rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 22px rgba(13, 148, 136, 0.18);
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
@@ -141,13 +134,15 @@
 
   .duel-buttons :global(.choice-button:hover) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(20, 171, 227, 0.3);
+    box-shadow: 0 16px 26px rgba(13, 148, 136, 0.24);
   }
 
   .vs-divider {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #14abe3;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(8, 51, 68, 0.56);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,16 +152,16 @@
   }
 
   .preparing-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #14abe3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0d9488;
     animation: pulse 2s infinite;
     margin: 2rem 0;
   }
 
   .button-container {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     margin: 2rem auto 0;
     display: flex;
     justify-content: center;
@@ -174,9 +169,9 @@
 
   .button-container :global(.reset-button) {
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0.75rem 1rem;
     font-size: 1rem;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.2s ease;
   }
 
@@ -195,7 +190,6 @@
     }
   }
 
-  /* Responsive styling for different screen sizes */
   @media (max-width: 768px) {
     .comparison-container {
       padding: 1.5rem;
@@ -217,21 +211,20 @@
     .duel-buttons :global(.choice-button) {
       width: 100%;
       min-width: unset;
-      min-height: 80px;
-      height: 80px;
+      min-height: 84px;
     }
   }
 
   @media (max-width: 480px) {
     .tournament-phase {
-      padding: 1rem;
+      padding: 1rem 0;
     }
 
     .comparison-container {
       padding: 1rem;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-      max-width: calc(100% - 1rem);
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
     }
 
     h2 {
